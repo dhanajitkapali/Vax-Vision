@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		016BA6E4268318E40010613D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6E3268318E40010613D /* AppDelegate.swift */; };
 		016BA6E6268318E40010613D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6E5268318E40010613D /* SceneDelegate.swift */; };
-		016BA6E8268318E40010613D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6E7268318E40010613D /* ViewController.swift */; };
+		016BA6E8268318E40010613D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6E7268318E40010613D /* HomeViewController.swift */; };
 		016BA6EB268318E40010613D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016BA6E9268318E40010613D /* Main.storyboard */; };
 		016BA6ED268318EA0010613D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016BA6EC268318EA0010613D /* Assets.xcassets */; };
 		016BA6F0268318EA0010613D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016BA6EE268318EA0010613D /* LaunchScreen.storyboard */; };
+		016BA6FB26836DD30010613D /* VaccineSlotBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6FA26836DD20010613D /* VaccineSlotBookViewController.swift */; };
+		016BA6FE26836DF30010613D /* VaccineSlotBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6FD26836DF30010613D /* VaccineSlotBookPresenter.swift */; };
+		016BA70226836E3A0010613D /* VaccineCertificateGenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA70126836E3A0010613D /* VaccineCertificateGenerateViewController.swift */; };
+		016BA70526836E4B0010613D /* VaccineCertificateGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA70426836E4B0010613D /* VaccineCertificateGenerate.swift */; };
+		016BA70A26838AB00010613D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA70926838AAF0010613D /* NetworkManager.swift */; };
+		016BA70D26838AE40010613D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA70C26838AE30010613D /* Constants.swift */; };
+		016BA71326839A490010613D /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA71226839A490010613D /* States.swift */; };
+		016BA71726839A940010613D /* Districts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA71626839A940010613D /* Districts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		016BA6E0268318E40010613D /* Vax Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vax Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		016BA6E3268318E40010613D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		016BA6E5268318E40010613D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		016BA6E7268318E40010613D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		016BA6E7268318E40010613D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		016BA6EA268318E40010613D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		016BA6EC268318EA0010613D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		016BA6EF268318EA0010613D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		016BA6F1268318EA0010613D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		016BA6FA26836DD20010613D /* VaccineSlotBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSlotBookViewController.swift; sourceTree = "<group>"; };
+		016BA6FD26836DF30010613D /* VaccineSlotBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineSlotBookPresenter.swift; sourceTree = "<group>"; };
+		016BA70126836E3A0010613D /* VaccineCertificateGenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCertificateGenerateViewController.swift; sourceTree = "<group>"; };
+		016BA70426836E4B0010613D /* VaccineCertificateGenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCertificateGenerate.swift; sourceTree = "<group>"; };
+		016BA70926838AAF0010613D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		016BA70C26838AE30010613D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		016BA71226839A490010613D /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		016BA71626839A940010613D /* Districts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Districts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,79 @@
 		016BA6E2268318E40010613D /* Vax Vision */ = {
 			isa = PBXGroup;
 			children = (
+				016BA70F26838AED0010613D /* Constants */,
+				016BA70826838A910010613D /* Networking */,
 				016BA6E3268318E40010613D /* AppDelegate.swift */,
 				016BA6E5268318E40010613D /* SceneDelegate.swift */,
-				016BA6E7268318E40010613D /* ViewController.swift */,
+				016BA70026836DFD0010613D /* Vaccine Certificate Generate */,
+				016BA6F926836DA30010613D /* Vaccine Slot Book */,
+				016BA6E7268318E40010613D /* HomeViewController.swift */,
 				016BA6E9268318E40010613D /* Main.storyboard */,
 				016BA6EC268318EA0010613D /* Assets.xcassets */,
 				016BA6EE268318EA0010613D /* LaunchScreen.storyboard */,
 				016BA6F1268318EA0010613D /* Info.plist */,
 			);
 			path = "Vax Vision";
+			sourceTree = "<group>";
+		};
+		016BA6F926836DA30010613D /* Vaccine Slot Book */ = {
+			isa = PBXGroup;
+			children = (
+				016BA71126839A3C0010613D /* Models */,
+				016BA71B26839AC50010613D /* Views */,
+				016BA71926839AB20010613D /* Presenter */,
+			);
+			path = "Vaccine Slot Book";
+			sourceTree = "<group>";
+		};
+		016BA70026836DFD0010613D /* Vaccine Certificate Generate */ = {
+			isa = PBXGroup;
+			children = (
+				016BA70126836E3A0010613D /* VaccineCertificateGenerateViewController.swift */,
+				016BA70426836E4B0010613D /* VaccineCertificateGenerate.swift */,
+			);
+			path = "Vaccine Certificate Generate";
+			sourceTree = "<group>";
+		};
+		016BA70826838A910010613D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				016BA70926838AAF0010613D /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		016BA70F26838AED0010613D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				016BA70C26838AE30010613D /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		016BA71126839A3C0010613D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				016BA71226839A490010613D /* States.swift */,
+				016BA71626839A940010613D /* Districts.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		016BA71926839AB20010613D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				016BA6FD26836DF30010613D /* VaccineSlotBookPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		016BA71B26839AC50010613D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				016BA6FA26836DD20010613D /* VaccineSlotBookViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +217,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				016BA6E8268318E40010613D /* ViewController.swift in Sources */,
+				016BA70D26838AE40010613D /* Constants.swift in Sources */,
+				016BA70526836E4B0010613D /* VaccineCertificateGenerate.swift in Sources */,
+				016BA6E8268318E40010613D /* HomeViewController.swift in Sources */,
+				016BA71726839A940010613D /* Districts.swift in Sources */,
 				016BA6E4268318E40010613D /* AppDelegate.swift in Sources */,
+				016BA6FE26836DF30010613D /* VaccineSlotBookPresenter.swift in Sources */,
+				016BA71326839A490010613D /* States.swift in Sources */,
+				016BA70A26838AB00010613D /* NetworkManager.swift in Sources */,
 				016BA6E6268318E40010613D /* SceneDelegate.swift in Sources */,
+				016BA6FB26836DD30010613D /* VaccineSlotBookViewController.swift in Sources */,
+				016BA70226836E3A0010613D /* VaccineCertificateGenerateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
