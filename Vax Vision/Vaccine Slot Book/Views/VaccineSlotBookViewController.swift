@@ -19,8 +19,12 @@ class VaccineSlotBookViewController: UIViewController {
     var selectedDropDownMenuButton = UIButton()
     
     var dataSource = [String]()
+    var statesInfo = [State]()
+    var districtsInfo = [District]()
     //var stateSelectStatus : isStateSelected
+    var currentDropDown = dropDownSelected.none
     var stateID : Int?
+    var districtID : Int?
     private var presenter : VaccineSlotBookPresenter!
     
     override func viewDidLoad() {
@@ -40,25 +44,26 @@ class VaccineSlotBookViewController: UIViewController {
     
     @IBAction func selectStateMenuButtonPressed(_ sender: UIButton) {
         selectedDropDownMenuButton = selectStateMenuButton
-        
+        currentDropDown = .sate
         //get all the States to populate the DropDownList
         presenter.getStateList()
     }
     
     @IBAction func selectDistrictMenuButtonPressed(_ sender: UIButton) {
         selectedDropDownMenuButton = selectDistrictMenuButton
-        
+        currentDropDown = .district
         if let id = stateID{
-            print(id)
+            //get all the Districts to populate the dropDownList
             presenter.getDistrictList(forStateID: id)
+        }else{
+            presentAlert(title: "Alert", message: "Select a Sate then, select district")
         }
-        //get all the Districts to populate the dropDownList
-    
-        addDropDownMenu(withFrame: selectDistrictMenuButton.frame)
     }
     
     @IBAction func checkSlotsButtonPressed(_ sender: UIButton) {
-        
+        if let id = districtID{
+            print(id)
+        }
     }
     
 }
@@ -71,6 +76,7 @@ extension VaccineSlotBookViewController : VaccineSlotBookPresenterDelegate{
             for i in 0...districtsData.districts.count-1{
                 dataSource.append(districtsData.districts[i].districtName)
             }
+            districtsInfo = districtsData.districts
             addDropDownMenu(withFrame: selectStateMenuButton.frame)
         }
     }
@@ -81,16 +87,20 @@ extension VaccineSlotBookViewController : VaccineSlotBookPresenterDelegate{
             for i in 0...statesData.states.count-1{
                 dataSource.append(statesData.states[i].stateName)
             }
+            statesInfo = statesData.states
             addDropDownMenu(withFrame: selectStateMenuButton.frame)
         }
     }
     
     func presentAlert(title: String, message: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-            //present(alert, animated: true)
-            print("Error -> presentAlert From VaccineSlots")
+            self.present(alert, animated: true)
+//            print("Error -> presentAlert From VaccineSlots")
+            if stateID == nil{
+                removeDropDownMenu()
+            }
         }
     }
 }
@@ -112,7 +122,13 @@ extension VaccineSlotBookViewController : UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedDropDownMenuButton.setTitle(dataSource[indexPath.row], for: .normal)
-        stateID = indexPath.row 
+        if currentDropDown == .sate{
+            stateID = statesInfo[indexPath.row].stateID
+                //indexPath.row
+        }
+        if currentDropDown == .district{
+            districtID = districtsInfo[indexPath.row].districtID
+        }
         removeDropDownMenu()
     }
 }
@@ -165,4 +181,10 @@ extension VaccineSlotBookViewController {
 enum isStateSelected {
     case selected
     case notSelected
+}
+
+enum dropDownSelected{
+    case sate
+    case district
+    case none
 }
