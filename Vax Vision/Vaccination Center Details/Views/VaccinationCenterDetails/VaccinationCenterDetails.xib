@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="228" id="KGk-i7-Jjw" customClass="VaccinationCenterDetails" customModule="Vax_Vision" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="228"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="328" height="228"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5w-uI-JhJ">
+                        <rect key="frame" x="10" y="7.5" width="308" height="213"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccine Center Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSS-SD-iSP">
+                                <rect key="frame" x="5" y="3" width="243" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="L5q-6w-5Qd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiJ-Uq-RbT">
+                                <rect key="frame" x="263" y="5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="T7J-ZH-CoX"/>
+                                    <constraint firstAttribute="width" constant="40" id="Wa3-YA-byu"/>
+                                </constraints>
+                                <state key="normal" image="map-pointer-icon"/>
+                                <connections>
+                                    <action selector="mapButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="s6a-Ph-ten"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccination Center Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3s-t7-sK1">
+                                <rect key="frame" x="5" y="30" width="243" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="0uo-6u-3nZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDt-gm-hNT">
+                                <rect key="frame" x="2" y="52" width="304" height="1"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="1XF-u8-0Vg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7o-mH-Nng">
+                                <rect key="frame" x="5" y="55" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A4p-PA-Du7"/>
+                                    <constraint firstAttribute="width" constant="30" id="cRz-cO-y7T"/>
+                                </constraints>
+                                <state key="normal" image="calender-icon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date / Center Openeing and Closing Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6A-Xh-1mw">
+                                <rect key="frame" x="50" y="65" width="253" height="13.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13.5" id="9MR-c6-rOm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxg-6b-eOv">
+                                <rect key="frame" x="5" y="90" width="298" height="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Vaccine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIW-KG-sCj">
+                                <rect key="frame" x="5" y="104" width="298" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14.5" id="6j5-kg-TFi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="odI-Im-Vsm">
+                                <rect key="frame" x="5" y="123.5" width="298" height="29.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="qm0-VA-BSh">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="29.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Dose 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-L1-zcg">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdA-LP-jfL">
+                                                <rect key="frame" x="0.0" y="15" width="94" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Bmc-sW-tAl">
+                                        <rect key="frame" x="102" y="0.0" width="94" height="29.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dose 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtZ-vr-3yE">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="11"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPh-hl-1Ox">
+                                                <rect key="frame" x="0.0" y="14" width="94" height="15.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mmj-pD-Yq7">
+                                        <rect key="frame" x="204" y="0.0" width="94" height="29.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqX-K5-9Bw">
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="11"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFj-RV-rBe">
+                                                <rect key="frame" x="0.0" y="15" width="94" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available for:- " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqT-Mk-T6f">
+                                <rect key="frame" x="5" y="160" width="298" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="p15-ab-b4m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-fz-UO4">
+                                <rect key="frame" x="0.0" y="183" width="308" height="30"/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.36470588240000001" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Fo-jZ-sJb"/>
+                                </constraints>
+                                <state key="normal" title="Register at Co-WIN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registrationAtCowinButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wsc-ma-k0e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95733481649999996" green="0.9665831923" blue="0.99675291779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fSS-SD-iSP" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="5" id="3z2-QF-nmc"/>
+                            <constraint firstItem="odI-Im-Vsm" firstAttribute="top" secondItem="pIW-KG-sCj" secondAttribute="bottom" constant="5" id="6Vx-c6-BmI"/>
+                            <constraint firstAttribute="trailing" secondItem="wDt-gm-hNT" secondAttribute="trailing" constant="2" id="8Tt-w2-Rrz"/>
+                            <constraint firstItem="M3s-t7-sK1" firstAttribute="top" secondItem="fSS-SD-iSP" secondAttribute="bottom" constant="5" id="Iuu-qc-r9v"/>
+                            <constraint firstAttribute="trailing" secondItem="Q6A-Xh-1mw" secondAttribute="trailing" constant="5" id="LNb-0r-hf3"/>
+                            <constraint firstItem="H7o-mH-Nng" firstAttribute="top" secondItem="wDt-gm-hNT" secondAttribute="bottom" constant="2" id="LQu-zL-vKg"/>
+                            <constraint firstAttribute="trailing" secondItem="hiJ-Uq-RbT" secondAttribute="trailing" constant="5" id="OpN-i9-bvc"/>
+                            <constraint firstItem="yqT-Mk-T6f" firstAttribute="top" secondItem="odI-Im-Vsm" secondAttribute="bottom" constant="7" id="Ph4-jQ-7ni"/>
+                            <constraint firstItem="wDt-gm-hNT" firstAttribute="top" secondItem="M3s-t7-sK1" secondAttribute="bottom" constant="5" id="QEb-VP-Rlw"/>
+                            <constraint firstAttribute="trailing" secondItem="yqT-Mk-T6f" secondAttribute="trailing" constant="5" id="QKF-nx-TFV"/>
+                            <constraint firstItem="pIW-KG-sCj" firstAttribute="top" secondItem="Dxg-6b-eOv" secondAttribute="bottom" constant="3" id="W5Q-9V-dYK"/>
+                            <constraint firstItem="hiJ-Uq-RbT" firstAttribute="leading" secondItem="fSS-SD-iSP" secondAttribute="trailing" constant="15" id="YBB-xw-d0i"/>
+                            <constraint firstItem="yqT-Mk-T6f" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="5" id="ZHT-EX-7fW"/>
+                            <constraint firstItem="pIW-KG-sCj" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="5" id="ZbV-4k-DfC"/>
+                            <constraint firstItem="Q6A-Xh-1mw" firstAttribute="leading" secondItem="H7o-mH-Nng" secondAttribute="trailing" constant="15" id="bxq-E9-D6C"/>
+                            <constraint firstItem="Mo0-fz-UO4" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" id="eqE-uL-paE"/>
+                            <constraint firstAttribute="trailing" secondItem="odI-Im-Vsm" secondAttribute="trailing" constant="5" id="f9v-m8-l0S"/>
+                            <constraint firstItem="Dxg-6b-eOv" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="5" id="gM5-xR-gbG"/>
+                            <constraint firstItem="wDt-gm-hNT" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="2" id="glj-da-vuy"/>
+                            <constraint firstItem="Mo0-fz-UO4" firstAttribute="top" secondItem="yqT-Mk-T6f" secondAttribute="bottom" constant="5" id="hxt-yQ-s1J"/>
+                            <constraint firstAttribute="trailing" secondItem="Mo0-fz-UO4" secondAttribute="trailing" id="ix7-Zu-u75"/>
+                            <constraint firstItem="odI-Im-Vsm" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="5" id="jhX-Cy-azh"/>
+                            <constraint firstItem="Q6A-Xh-1mw" firstAttribute="top" secondItem="wDt-gm-hNT" secondAttribute="bottom" constant="12" id="lkx-Up-Buv"/>
+                            <constraint firstItem="H7o-mH-Nng" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="5" id="mf1-Nr-xga"/>
+                            <constraint firstAttribute="trailing" secondItem="pIW-KG-sCj" secondAttribute="trailing" constant="5" id="p6a-wA-b0Z"/>
+                            <constraint firstAttribute="bottom" secondItem="Mo0-fz-UO4" secondAttribute="bottom" id="rgc-6b-5gc"/>
+                            <constraint firstItem="hiJ-Uq-RbT" firstAttribute="top" secondItem="i5w-uI-JhJ" secondAttribute="top" constant="5" id="riO-En-D3J"/>
+                            <constraint firstItem="Dxg-6b-eOv" firstAttribute="top" secondItem="H7o-mH-Nng" secondAttribute="bottom" constant="5" id="uos-MZ-vGg"/>
+                            <constraint firstItem="fSS-SD-iSP" firstAttribute="top" secondItem="i5w-uI-JhJ" secondAttribute="top" constant="3" id="vHT-ye-hvK"/>
+                            <constraint firstAttribute="trailing" secondItem="Dxg-6b-eOv" secondAttribute="trailing" constant="5" id="vU8-cb-HyU"/>
+                            <constraint firstItem="hiJ-Uq-RbT" firstAttribute="leading" secondItem="M3s-t7-sK1" secondAttribute="trailing" constant="15" id="xjv-2X-TW5"/>
+                            <constraint firstItem="M3s-t7-sK1" firstAttribute="leading" secondItem="i5w-uI-JhJ" secondAttribute="leading" constant="5" id="yxz-vS-tO6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="i5w-uI-JhJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fai-xE-5ZQ"/>
+                    <constraint firstItem="i5w-uI-JhJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Jgu-uY-8vy"/>
+                    <constraint firstAttribute="trailing" secondItem="i5w-uI-JhJ" secondAttribute="trailing" constant="10" id="rq6-up-WyD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backgroundView" destination="i5w-uI-JhJ" id="nNN-m8-3pD"/>
+                <outlet property="doseOneCapacity" destination="PdA-LP-jfL" id="dc0-6O-dgX"/>
+                <outlet property="doseTwoCapacity" destination="qPh-hl-1Ox" id="i2O-CG-ksK"/>
+                <outlet property="registrationAtCowinButton" destination="Mo0-fz-UO4" id="Tyh-xs-48m"/>
+                <outlet property="vaccinationCenterAddress" destination="M3s-t7-sK1" id="n93-xA-z2C"/>
+                <outlet property="vaccinationCenterTimings" destination="Q6A-Xh-1mw" id="VDg-hd-PS7"/>
+                <outlet property="vaccineAgeLimit" destination="yqT-Mk-T6f" id="bVi-kI-fFV"/>
+                <outlet property="vaccineCenterName" destination="fSS-SD-iSP" id="Krz-Js-A1G"/>
+                <outlet property="vaccineFee" destination="DFj-RV-rBe" id="Rmb-rJ-xHu"/>
+                <outlet property="vaccineName" destination="pIW-KG-sCj" id="u7D-bZ-zV1"/>
+            </connections>
+            <point key="canvasLocation" x="134.78260869565219" y="115.17857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="calender-icon" width="96" height="96"/>
+        <image name="map-pointer-icon" width="96" height="96"/>
+    </resources>
+</document>

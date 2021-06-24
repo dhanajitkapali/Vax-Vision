@@ -167,26 +167,43 @@
                         <outlet property="datePicker" destination="dQ5-fC-q51" id="bd1-zO-1MX"/>
                         <outlet property="selectDistrictMenuButton" destination="PXx-VH-mbn" id="gqT-NU-lBp"/>
                         <outlet property="selectStateMenuButton" destination="ECm-Fk-Fs7" id="GiQ-SU-hgS"/>
+                        <segue destination="CEL-4k-fnI" kind="show" identifier="vaccineBookToDetails" id="MxH-uV-fkT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuS-ov-EBK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525" y="-241"/>
         </scene>
-        <!--View Controller-->
+        <!--Vaccination Center Details View Controller-->
         <scene sceneID="y8X-dR-NNN">
             <objects>
-                <viewController id="CEL-4k-fnI" sceneMemberID="viewController">
+                <viewController id="CEL-4k-fnI" customClass="VaccinationCenterDetailsViewController" customModule="Vax_Vision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SAr-Pp-nIx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BcC-OO-31t">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YJi-lY-UW2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YJi-lY-UW2" firstAttribute="bottom" secondItem="BcC-OO-31t" secondAttribute="bottom" id="NoK-sf-VqK"/>
+                            <constraint firstItem="BcC-OO-31t" firstAttribute="top" secondItem="YJi-lY-UW2" secondAttribute="top" id="ZLb-7q-5I9"/>
+                            <constraint firstItem="BcC-OO-31t" firstAttribute="leading" secondItem="YJi-lY-UW2" secondAttribute="leading" id="nLw-kr-OVh"/>
+                            <constraint firstItem="YJi-lY-UW2" firstAttribute="trailing" secondItem="BcC-OO-31t" secondAttribute="trailing" id="slM-eE-adn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="DwF-U9-d9d"/>
+                    <connections>
+                        <outlet property="vaccinationCenterDetailsTableView" destination="BcC-OO-31t" id="zXD-wc-dj9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKR-Eq-mnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3186.9565217391305" y="89.732142857142847"/>
+            <point key="canvasLocation" x="2351" y="-241"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UvG-lz-UZb">

@@ -25,6 +25,7 @@ class VaccineSlotBookViewController: UIViewController {
     var currentDropDown = dropDownSelected.none
     var stateID : Int?
     var districtID : Int?
+    private var dateSelected : String?
     private var presenter : VaccineSlotBookPresenter!
     
     override func viewDidLoad() {
@@ -35,6 +36,17 @@ class VaccineSlotBookViewController: UIViewController {
         
         //initializing the enum variables
         //stateSelectStatus = .notSelected
+        
+        //initailizing the dateSelected
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateSelected = dateFormatter.string(from: datePicker.date)
+        
+        //setting the DatePicker
+        datePicker.date = Date()
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.addTarget(self, action: #selector(dateSetter), for: .valueChanged)
 
         //setting delegate and dataSorce of tableViews
         dropDownMenuTableView.delegate = self
@@ -61,9 +73,27 @@ class VaccineSlotBookViewController: UIViewController {
     }
     
     @IBAction func checkSlotsButtonPressed(_ sender: UIButton) {
-        if let id = districtID{
-            print(id)
+        if let _ = districtID , let _ = dateSelected{
+            performSegue(withIdentifier: K.SegueID.VACCINE_BOOK_TO_DETAILS, sender: self)
+        }else{
+            presentAlert(title: "Alert", message: "District not selected, Please Select it")
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.SegueID.VACCINE_BOOK_TO_DETAILS{
+            let destinationVC = segue.destination as! VaccinationCenterDetailsViewController
+            destinationVC.districtID = districtID
+            destinationVC.selectedDate = dateSelected
+        }
+    }
+    
+    @objc private func dateSetter(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let date = dateFormatter.string(from: datePicker.date)
+        dateSelected = date
     }
     
 }
@@ -155,7 +185,8 @@ extension VaccineSlotBookViewController {
         transparentView.alpha = 0
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .curveEaseInOut) {
             self.transparentView.alpha = 0.9
-            self.dropDownMenuTableView.frame = CGRect(x: withFrame.origin.x + 5, y: withFrame.origin.y + withFrame.height, width: withFrame.width, height: CGFloat(self.dataSource.count * 45))
+            let dropDownMenuFullHeight = self.dataSource.count * 45
+            self.dropDownMenuTableView.frame = CGRect(x: withFrame.origin.x + 5, y: withFrame.origin.y + withFrame.height, width: withFrame.width, height: dropDownMenuFullHeight < 350 ? CGFloat(dropDownMenuFullHeight) : 350 )
         } completion: { (done) in
             if(done){
                 
