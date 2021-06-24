@@ -183,27 +183,121 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BcC-OO-31t">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="166.5" width="414" height="695.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaZ-Ry-Q8s">
+                                <rect key="frame" x="10" y="93" width="45" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-VZ-aSC">
+                                <rect key="frame" x="10" y="130.5" width="394" height="21"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi7-L0-3vG">
+                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="21"/>
+                                        <color key="backgroundColor" red="0.95733481649999996" green="0.9665831923" blue="0.99675291779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" title="Free">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="freeButtonPressed:" destination="CEL-4k-fnI" eventType="touchUpInside" id="xJr-dc-paa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnV-GH-tCr">
+                                        <rect key="frame" x="45.5" y="0.0" width="37.5" height="21"/>
+                                        <color key="backgroundColor" red="0.95733481649999996" green="0.9665831923" blue="0.99675291779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" title="Paid">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="paidButtonPressed:" destination="CEL-4k-fnI" eventType="touchUpInside" id="dBD-mP-Fl0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmh-Ij-yDW">
+                                        <rect key="frame" x="91" y="0.0" width="64.5" height="21"/>
+                                        <color key="backgroundColor" red="0.95733481649999996" green="0.9665831923" blue="0.99675291779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" title="Age 18+">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="age18PlusButtonPressed:" destination="CEL-4k-fnI" eventType="touchUpInside" id="PlD-zZ-VWH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeU-1d-Ixl">
+                                        <rect key="frame" x="163.5" y="0.0" width="65.5" height="21"/>
+                                        <color key="backgroundColor" red="0.95733481649999996" green="0.9665831923" blue="0.99675291779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" title="Age 45+">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="age45PlusButtonPressed:" destination="CEL-4k-fnI" eventType="touchUpInside" id="HMt-1J-Mcw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaK-yW-rBW">
+                                        <rect key="frame" x="237" y="0.0" width="78.5" height="21"/>
+                                        <color key="backgroundColor" red="0.95733481649999996" green="0.9665831923" blue="0.99675291779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" title="Covishield">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="covishiledButtonPressed:" destination="CEL-4k-fnI" eventType="touchUpInside" id="9Z3-cV-LEN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keR-4x-tB3">
+                                        <rect key="frame" x="323.5" y="0.0" width="70.5" height="21"/>
+                                        <color key="backgroundColor" red="0.95733481649999996" green="0.9665831923" blue="0.99675291779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" title="Covaxin">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="covaxinButtonPressed:" destination="CEL-4k-fnI" eventType="touchUpInside" id="nJ5-NH-mzw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YJi-lY-UW2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Nr2-VZ-aSC" firstAttribute="leading" secondItem="YJi-lY-UW2" secondAttribute="leading" constant="10" id="J1B-zA-X0h"/>
                             <constraint firstItem="YJi-lY-UW2" firstAttribute="bottom" secondItem="BcC-OO-31t" secondAttribute="bottom" id="NoK-sf-VqK"/>
-                            <constraint firstItem="BcC-OO-31t" firstAttribute="top" secondItem="YJi-lY-UW2" secondAttribute="top" id="ZLb-7q-5I9"/>
+                            <constraint firstItem="JaZ-Ry-Q8s" firstAttribute="top" secondItem="YJi-lY-UW2" secondAttribute="top" constant="5" id="Sz5-Rr-dPF"/>
+                            <constraint firstItem="JaZ-Ry-Q8s" firstAttribute="leading" secondItem="YJi-lY-UW2" secondAttribute="leading" constant="10" id="TOf-I4-eOr"/>
+                            <constraint firstItem="Nr2-VZ-aSC" firstAttribute="top" secondItem="JaZ-Ry-Q8s" secondAttribute="bottom" constant="15" id="VQi-La-zAa"/>
+                            <constraint firstItem="BcC-OO-31t" firstAttribute="top" secondItem="Nr2-VZ-aSC" secondAttribute="bottom" constant="15" id="hMV-Xb-g5m"/>
                             <constraint firstItem="BcC-OO-31t" firstAttribute="leading" secondItem="YJi-lY-UW2" secondAttribute="leading" id="nLw-kr-OVh"/>
+                            <constraint firstItem="YJi-lY-UW2" firstAttribute="trailing" secondItem="Nr2-VZ-aSC" secondAttribute="trailing" constant="10" id="sN2-Zm-iXh"/>
                             <constraint firstItem="YJi-lY-UW2" firstAttribute="trailing" secondItem="BcC-OO-31t" secondAttribute="trailing" id="slM-eE-adn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DwF-U9-d9d"/>
                     <connections>
+                        <outlet property="age18PlusButton" destination="Jmh-Ij-yDW" id="Ipc-lj-hlq"/>
+                        <outlet property="age45PlusButton" destination="TeU-1d-Ixl" id="0Kt-ie-djE"/>
+                        <outlet property="covaxinButton" destination="keR-4x-tB3" id="4JK-OM-R2e"/>
+                        <outlet property="covishieldButton" destination="jaK-yW-rBW" id="VJg-zU-bs1"/>
+                        <outlet property="freeButton" destination="yi7-L0-3vG" id="xgS-4A-fMs"/>
+                        <outlet property="paidButton" destination="YnV-GH-tCr" id="VUf-2P-R2Z"/>
                         <outlet property="vaccinationCenterDetailsTableView" destination="BcC-OO-31t" id="zXD-wc-dj9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKR-Eq-mnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2351" y="-241"/>
+            <point key="canvasLocation" x="2350.7246376811595" y="-241.07142857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UvG-lz-UZb">

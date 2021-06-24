@@ -9,6 +9,13 @@ import UIKit
 
 class VaccinationCenterDetailsViewController: UIViewController {
 
+    @IBOutlet var freeButton: UIButton!
+    @IBOutlet var paidButton: UIButton!
+    @IBOutlet var age18PlusButton: UIButton!
+    @IBOutlet var age45PlusButton: UIButton!
+    @IBOutlet var covishieldButton: UIButton!
+    @IBOutlet var covaxinButton: UIButton!
+    
     @IBOutlet private weak var vaccinationCenterDetailsTableView: UITableView!
     
     private var presenter : VaccinationCenterDetailsPresenter!
@@ -19,6 +26,8 @@ class VaccinationCenterDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addDesignToUI()
+        
         //setting self as the delegate of the presenter
         presenter = VaccinationCenterDetailsPresenter(withDelegate : self)
         
@@ -35,7 +44,65 @@ class VaccinationCenterDetailsViewController: UIViewController {
         }
     }
     
-
+    @IBAction func freeButtonPressed(_ sender: UIButton) {
+        print("free")
+        centerDetails = centerDetails.filter({$0.feeType == "Free"})
+        print(centerDetails.count)
+        vaccinationCenterDetailsTableView.reloadData()
+    }
+    
+    @IBAction func paidButtonPressed(_ sender: UIButton) {
+        print("paid")
+        print("Total -> \(centerDetails.count)")
+        let temp = centerDetails
+        centerDetails = []
+        for i in 0...temp.count-1{
+            if(temp[i].feeType == "Paid"){
+                centerDetails.append(temp[i])
+            }
+        }
+        
+        
+        //centerDetails = centerDetails.filter({$0.feeType == "Paid"})
+        print("Paid -> \(centerDetails.count)")
+        vaccinationCenterDetailsTableView.reloadData()
+    }
+    
+    @IBAction func age18PlusButtonPressed(_ sender: UIButton) {
+        print("18+")
+        centerDetails = centerDetails.filter({$0.minAgeLimit == 18})
+        print(centerDetails.count)
+        vaccinationCenterDetailsTableView.reloadData()
+    }
+    
+    @IBAction func age45PlusButtonPressed(_ sender: Any) {
+        print("45+")
+        centerDetails = centerDetails.filter({$0.minAgeLimit == 45})
+        print(centerDetails.count)
+        vaccinationCenterDetailsTableView.reloadData()
+    }
+    @IBAction func covishiledButtonPressed(_ sender: UIButton) {
+        print("covishield")
+        centerDetails = centerDetails.filter({$0.vaccine == "COVISHIELD"})
+        print(centerDetails.count)
+        vaccinationCenterDetailsTableView.reloadData()
+    }
+    
+    @IBAction func covaxinButtonPressed(_ sender: UIButton) {
+        print("covaxin")
+        centerDetails = centerDetails.filter({$0.feeType == "COVAXIN"})
+        print(centerDetails.count)
+        vaccinationCenterDetailsTableView.reloadData()
+    }
+    
+    func addDesignToUI(){
+        freeButton.layer.cornerRadius = 5.0
+        paidButton.layer.cornerRadius = 5.0
+        age18PlusButton.layer.cornerRadius = 5.0
+        age45PlusButton.layer.cornerRadius = 5.0
+        covishieldButton.layer.cornerRadius = 5.0
+        covaxinButton.layer.cornerRadius = 5.0
+    }
 }
 
 //MARK: - Delegate Functions
