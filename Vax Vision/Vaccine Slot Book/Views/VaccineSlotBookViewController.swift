@@ -9,22 +9,22 @@ import UIKit
 
 class VaccineSlotBookViewController: UIViewController {
 
-    @IBOutlet var selectStateMenuButton: UIButton!
-    @IBOutlet var selectDistrictMenuButton: UIButton!
-    @IBOutlet var datePicker: UIDatePicker!
-    @IBOutlet var checkSlotsButton: UIButton!
+    @IBOutlet private weak var selectStateMenuButton: UIButton!
+    @IBOutlet private weak var selectDistrictMenuButton: UIButton!
+    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var checkSlotsButton: UIButton!
     
-    let transparentView = UIView()
-    let dropDownMenuTableView = UITableView()
-    var selectedDropDownMenuButton = UIButton()
+    private let transparentView = UIView()
+    private let dropDownMenuTableView = UITableView()
+    private var selectedDropDownMenuButton = UIButton()
     
-    var dataSource = [String]()
-    var statesInfo = [State]()
-    var districtsInfo = [District]()
+    private var dataSource = [String]()
+    private var statesInfo = [State]()
+    private var districtsInfo = [District]()
     //var stateSelectStatus : isStateSelected
-    var currentDropDown = dropDownSelected.none
-    var stateID : Int?
-    var districtID : Int?
+    private var currentDropDown = dropDownSelected.none
+    private var stateID : Int?
+    private var districtID : Int?
     private var dateSelected : String?
     private var presenter : VaccineSlotBookPresenter!
     

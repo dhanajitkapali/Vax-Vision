@@ -9,16 +9,16 @@ import UIKit
 
 class VaccinationCenterDetails: UITableViewCell {
     
-    @IBOutlet var containerView: UIView!
-    @IBOutlet var vaccineCenterName: UILabel!
-    @IBOutlet var vaccinationCenterAddress: UILabel!
-    @IBOutlet var vaccinationCenterTimings: UILabel!
-    @IBOutlet var vaccineName: UILabel!
-    @IBOutlet var doseOneCapacity: UILabel!
-    @IBOutlet var doseTwoCapacity: UILabel!
-    @IBOutlet var vaccineFee: UILabel!
-    @IBOutlet var vaccineAgeLimit: UILabel!
-    @IBOutlet var registrationAtCowinButton: UIButton!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var vaccineCenterName: UILabel!
+    @IBOutlet private weak var vaccinationCenterAddress: UILabel!
+    @IBOutlet private weak var vaccinationCenterTimings: UILabel!
+    @IBOutlet private weak var vaccineName: UILabel!
+    @IBOutlet private weak var doseOneCapacity: UILabel!
+    @IBOutlet private weak var doseTwoCapacity: UILabel!
+    @IBOutlet private weak var vaccineFee: UILabel!
+    @IBOutlet private weak var vaccineAgeLimit: UILabel!
+    @IBOutlet private weak var registrationAtCowinButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,7 +61,7 @@ class VaccinationCenterDetails: UITableViewCell {
         vaccineAgeLimit.text = "Available For:- \(withData.minAgeLimit)+"
     }
     
-    func getCenterTimingsInString(withDate : String , from : String, to : String) -> String{
+    private func getCenterTimingsInString(withDate : String , from : String, to : String) -> String{
         let timings = withDate + " from " + from + " to " + to
         return timings
     }

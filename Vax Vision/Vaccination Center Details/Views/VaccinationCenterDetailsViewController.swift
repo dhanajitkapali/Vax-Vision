@@ -9,12 +9,12 @@ import UIKit
 
 class VaccinationCenterDetailsViewController: UIViewController {
 
-    @IBOutlet var vaccinationCenterDetailsTableView: UITableView!
+    @IBOutlet private weak var vaccinationCenterDetailsTableView: UITableView!
     
     private var presenter : VaccinationCenterDetailsPresenter!
     var districtID : Int?
     var selectedDate : String?
-    var centerDetails = [Session]()
+    private var centerDetails = [Session]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
