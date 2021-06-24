@@ -10,24 +10,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="228" id="KGk-i7-Jjw" customClass="VaccinationCenterDetails" customModule="Vax_Vision" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="328" height="228"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="267" id="KGk-i7-Jjw" customClass="VaccinationCenterDetails" customModule="Vax_Vision" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="334" height="267"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="328" height="228"/>
+                <rect key="frame" x="0.0" y="0.0" width="334" height="267"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5w-uI-JhJ">
-                        <rect key="frame" x="10" y="3" width="308" height="222"/>
+                        <rect key="frame" x="10" y="5" width="314" height="257"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccine Center Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSS-SD-iSP">
-                                <rect key="frame" x="5" y="3" width="243" height="29"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccine Center Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSS-SD-iSP">
+                                <rect key="frame" x="5" y="3" width="249" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiJ-Uq-RbT">
-                                <rect key="frame" x="263" y="5" width="40" height="40"/>
+                                <rect key="frame" x="269" y="5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T7J-ZH-CoX"/>
                                     <constraint firstAttribute="width" constant="40" id="Wa3-YA-byu"/>
@@ -37,21 +37,21 @@
                                     <action selector="mapButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="s6a-Ph-ten"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccination Center Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3s-t7-sK1">
-                                <rect key="frame" x="5" y="37" width="243" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccination Center Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3s-t7-sK1">
+                                <rect key="frame" x="5" y="39.5" width="249" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDt-gm-hNT">
-                                <rect key="frame" x="2" y="59" width="304" height="1"/>
+                                <rect key="frame" x="2" y="64" width="310" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="1XF-u8-0Vg"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7o-mH-Nng">
-                                <rect key="frame" x="5" y="62" width="30" height="30"/>
+                                <rect key="frame" x="5" y="67" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="A4p-PA-Du7"/>
                                     <constraint firstAttribute="width" constant="30" id="cRz-cO-y7T"/>
@@ -59,35 +59,36 @@
                                 <state key="normal" image="calender-icon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date / Center Openeing and Closing Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6A-Xh-1mw">
-                                <rect key="frame" x="50" y="72" width="253" height="13.5"/>
+                                <rect key="frame" x="50" y="77" width="259" height="13.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13.5" id="9MR-c6-rOm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxg-6b-eOv">
-                                <rect key="frame" x="5" y="97" width="298" height="11"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <rect key="frame" x="5" y="102" width="304" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIW-KG-sCj">
-                                <rect key="frame" x="5" y="111" width="298" height="14.5"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                <rect key="frame" x="5" y="118.5" width="304" height="17"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available for:- " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqT-Mk-T6f">
-                                <rect key="frame" x="5" y="169" width="298" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="5" y="184" width="304" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-fz-UO4">
-                                <rect key="frame" x="0.0" y="192" width="308" height="30"/>
+                                <rect key="frame" x="0.0" y="209.5" width="314" height="47.5"/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.36470588240000001" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Register at Co-WIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -96,54 +97,54 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PdE-tA-8yu">
-                                <rect key="frame" x="5" y="130.5" width="298" height="33.5"/>
+                                <rect key="frame" x="5" y="140.5" width="304" height="38.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bIh-vo-1uX">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="38.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dose 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9U-NJ-HfQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="11"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-rg-teA">
-                                                <rect key="frame" x="0.0" y="19" width="94" height="14.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="96" height="17"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T5M-lz-dfg">
-                                        <rect key="frame" x="102" y="0.0" width="94" height="33.5"/>
+                                        <rect key="frame" x="104" y="0.0" width="96" height="38.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dose 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-Cp-mul">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="11"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmI-9I-6GU">
-                                                <rect key="frame" x="0.0" y="19" width="94" height="14.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="96" height="17"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="1rL-TH-s3f">
-                                        <rect key="frame" x="204" y="0.0" width="94" height="33.5"/>
+                                        <rect key="frame" x="208" y="0.0" width="96" height="38.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKX-v6-8Hg">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="12"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avt-BM-tJk">
-                                                <rect key="frame" x="0.0" y="19" width="94" height="14.5"/>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                                <rect key="frame" x="0.0" y="21.5" width="96" height="17"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -190,22 +191,27 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="i5w-uI-JhJ" secondAttribute="bottom" constant="5" id="Ath-we-NUq"/>
                     <constraint firstItem="i5w-uI-JhJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fai-xE-5ZQ"/>
                     <constraint firstItem="i5w-uI-JhJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Jgu-uY-8vy"/>
+                    <constraint firstItem="i5w-uI-JhJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fYr-mU-47r"/>
                     <constraint firstAttribute="trailing" secondItem="i5w-uI-JhJ" secondAttribute="trailing" constant="10" id="rq6-up-WyD"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerView" destination="i5w-uI-JhJ" id="jku-sA-8NE"/>
+                <outlet property="doseOneCapacity" destination="5h9-rg-teA" id="4Qs-Y6-Yv6"/>
+                <outlet property="doseTwoCapacity" destination="dmI-9I-6GU" id="Q54-SX-YGW"/>
                 <outlet property="registrationAtCowinButton" destination="Mo0-fz-UO4" id="Tyh-xs-48m"/>
                 <outlet property="vaccinationCenterAddress" destination="M3s-t7-sK1" id="n93-xA-z2C"/>
                 <outlet property="vaccinationCenterTimings" destination="Q6A-Xh-1mw" id="VDg-hd-PS7"/>
                 <outlet property="vaccineAgeLimit" destination="yqT-Mk-T6f" id="bVi-kI-fFV"/>
                 <outlet property="vaccineCenterName" destination="fSS-SD-iSP" id="Krz-Js-A1G"/>
+                <outlet property="vaccineFee" destination="Avt-BM-tJk" id="DgJ-md-4OD"/>
                 <outlet property="vaccineName" destination="pIW-KG-sCj" id="u7D-bZ-zV1"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="115.17857142857142"/>
+            <point key="canvasLocation" x="139.13043478260872" y="128.23660714285714"/>
         </tableViewCell>
     </objects>
     <resources>
