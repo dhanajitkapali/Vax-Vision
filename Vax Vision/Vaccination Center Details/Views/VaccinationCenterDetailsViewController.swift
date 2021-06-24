@@ -29,6 +29,7 @@ class VaccinationCenterDetailsViewController: UIViewController {
         vaccinationCenterDetailsTableView.delegate = self
         vaccinationCenterDetailsTableView.dataSource = self
         
+        
         if let id = districtID , let date = selectedDate{
             presenter.getVaccinationCenterDetails(forDistrictID: id, forDate: date)
         }
@@ -64,7 +65,13 @@ extension VaccinationCenterDetailsViewController : UITableViewDelegate , UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = vaccinationCenterDetailsTableView.dequeueReusableCell(withIdentifier: K.TableViewCellID.VACCINATION_CENTER_DETAILS_CELL_ID , for: indexPath) as! VaccinationCenterDetails
+        cell.selectionStyle = .none
+        //cell.containerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height:223)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vaccinationCenterDetailsTableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

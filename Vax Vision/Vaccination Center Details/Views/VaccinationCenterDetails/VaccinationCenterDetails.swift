@@ -8,7 +8,7 @@
 import UIKit
 
 class VaccinationCenterDetails: UITableViewCell {
-
+    
     @IBOutlet var containerView: UIView!
     @IBOutlet var vaccineCenterName: UILabel!
     @IBOutlet var vaccinationCenterAddress: UILabel!
