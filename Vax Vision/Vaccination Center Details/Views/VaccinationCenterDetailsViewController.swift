@@ -158,7 +158,7 @@ extension VaccinationCenterDetailsViewController : VaccinationCenterDetailsDeleg
     func presentAlert(title: String, message: String) {
         DispatchQueue.main.async { [self] in
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: K.TextMessage.DISMISS, style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
     }

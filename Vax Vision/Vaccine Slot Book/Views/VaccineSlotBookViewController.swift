@@ -21,7 +21,6 @@ class VaccineSlotBookViewController: UIViewController {
     private var dataSource = [String]()
     private var statesInfo = [State]()
     private var districtsInfo = [District]()
-    //var stateSelectStatus : isStateSelected
     private var currentDropDown = dropDownSelected.none
     private var stateID : Int?
     private var districtID : Int?
@@ -33,9 +32,7 @@ class VaccineSlotBookViewController: UIViewController {
         
         //setting self delegate of presenter
         presenter = VaccineSlotBookPresenter(withDelegate : self)
-        
-        //initializing the enum variables
-        //stateSelectStatus = .notSelected
+
         
         //initailizing the dateSelected
         let dateFormatter = DateFormatter()
@@ -51,7 +48,7 @@ class VaccineSlotBookViewController: UIViewController {
         //setting delegate and dataSorce of tableViews
         dropDownMenuTableView.delegate = self
         dropDownMenuTableView.dataSource = self
-        dropDownMenuTableView.register(UITableViewCell.self, forCellReuseIdentifier: "dropDownMenuCell")
+        dropDownMenuTableView.register(UITableViewCell.self, forCellReuseIdentifier: K.TableViewCellID.DROP_DOWN_MENU_CELL_ID)
     }
     
     @IBAction func selectStateMenuButtonPressed(_ sender: UIButton) {
@@ -68,7 +65,7 @@ class VaccineSlotBookViewController: UIViewController {
             //get all the Districts to populate the dropDownList
             presenter.getDistrictList(forStateID: id)
         }else{
-            presentAlert(title: "Alert", message: "Select a Sate then, select district")
+            presentAlert(title: K.TextMessage.ALERT, message: K.TextMessage.STATE_NOT_SELECTED)
         }
     }
     
@@ -76,7 +73,7 @@ class VaccineSlotBookViewController: UIViewController {
         if let _ = districtID , let _ = dateSelected{
             performSegue(withIdentifier: K.SegueID.VACCINE_BOOK_TO_DETAILS, sender: self)
         }else{
-            presentAlert(title: "Alert", message: "District not selected, Please Select it")
+            presentAlert(title: K.TextMessage.ALERT, message: K.TextMessage.DISTRICT_NOT_SELECTED)
         }
     }
     
@@ -125,7 +122,7 @@ extension VaccineSlotBookViewController : VaccineSlotBookPresenterDelegate{
     func presentAlert(title: String, message: String) {
         DispatchQueue.main.async { [self] in
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: K.TextMessage.DISMISS, style: .cancel, handler: nil))
             self.present(alert, animated: true)
 //            print("Error -> presentAlert From VaccineSlots")
             if stateID == nil{
@@ -141,7 +138,7 @@ extension VaccineSlotBookViewController : UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dropDownMenuTableView.dequeueReusableCell(withIdentifier: "dropDownMenuCell" , for: indexPath)
+        let cell = dropDownMenuTableView.dequeueReusableCell(withIdentifier: K.TableViewCellID.DROP_DOWN_MENU_CELL_ID , for: indexPath)
         cell.textLabel?.text = dataSource[indexPath.row]
         return cell
     }
@@ -209,11 +206,6 @@ extension VaccineSlotBookViewController {
 }
 
 //MARK: - Enums
-enum isStateSelected {
-    case selected
-    case notSelected
-}
-
 enum dropDownSelected{
     case sate
     case district

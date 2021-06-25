@@ -53,7 +53,7 @@ class VaccineSlotBookPresenter{
             case .failure(let error):
                 print(error.localizedDescription)
                 //self.delegate?.stopAndHideLoader()
-                self.delegate?.presentAlert(title: "Error" , message: error.localizedDescription)
+                self.delegate?.presentAlert(title: K.TextMessage.ERROR , message: error.localizedDescription)
             }
         }
     }

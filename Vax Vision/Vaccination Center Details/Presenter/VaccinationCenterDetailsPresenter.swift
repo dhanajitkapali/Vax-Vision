@@ -28,7 +28,7 @@ class VaccinationCenterDetailsPresenter{
             case .success(let centersData):
                 self.delegate.presentVaccinationCenterDetails(centers: centersData.sessions)
             case .failure(let error):
-                self.delegate?.presentAlert(title: "Error" , message: error.localizedDescription)
+                self.delegate?.presentAlert(title: K.TextMessage.ERROR , message: error.localizedDescription)
             }
         }
     }

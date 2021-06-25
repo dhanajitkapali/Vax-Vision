@@ -27,6 +27,7 @@ struct K {
     struct TableViewCellID {
         static let VACCINATION_CENTER_DETAILS_CELL_ID = "VaccinationCenterDetailsCellID"
         static let CENTER_DETAILS_CELL_ID = "centerDetailsCell"
+        static let DROP_DOWN_MENU_CELL_ID = "dropDownMenuCell"
     }
     
     struct Image {
@@ -52,10 +53,15 @@ struct K {
     }
     
     struct TextMessage {
+        static let ERROR = "Error"
+        static let DISMISS = "Dismiss"
+        static let ALERT = "Alert"
         static let EMPTY_EMAIL_MESSAGE = "Email can't be empty"
         static let EMPTY_PASSWORD_MESSAGE = "Password can't be empty"
         static let EMPTY_MOBILE_NO_MESSAGE = "Mobile No. can't be empty"
         static let EMPTY_NAME_MESSAGE = "Name can't be empty"
+        static let STATE_NOT_SELECTED = "Select a Sate then, select district"
+        static let DISTRICT_NOT_SELECTED = "District not selected, Please Select it"
     }
     
     struct ErrorMessage {
