@@ -49,65 +49,67 @@ class VaccinationCenterDetailsViewController: UIViewController {
     }
     
     @IBAction func freeButtonPressed(_ sender: UIButton) {
-        print("Free")
-        if selectedFilterButtonStatus.contains(K.FilterParameters.FREE){
+        if selectedFilterButtonStatus.contains(K.FilterParameters.FREE){ //button already selected
             selectedFilterButtonStatus = selectedFilterButtonStatus.filter({$0 != K.FilterParameters.FREE})
+            sender.backgroundColor = UIColor.systemGray5
         }else{
             selectedFilterButtonStatus.append(K.FilterParameters.FREE)
+            sender.backgroundColor = UIColor.red
         }
         filterCenterDetails()
         
-//        print("free")
-//        centerDetails = centerDetails.filter({$0.feeType == "Free"})
-//        print(centerDetails.count)
-//        vaccinationCenterDetailsTableView.reloadData()
     }
     
     @IBAction func paidButtonPressed(_ sender: UIButton) {
-        print("paid")
         if selectedFilterButtonStatus.contains(K.FilterParameters.PAID){
             selectedFilterButtonStatus = selectedFilterButtonStatus.filter({$0 != K.FilterParameters.PAID})
+            sender.backgroundColor = UIColor.systemGray5
         }else{
             selectedFilterButtonStatus.append(K.FilterParameters.PAID)
+            sender.backgroundColor = UIColor.red
         }
         filterCenterDetails()
     }
     
     @IBAction func age18PlusButtonPressed(_ sender: UIButton) {
-        print("18+")
         if selectedFilterButtonStatus.contains(K.FilterParameters.AGE_18_PLUS){
             selectedFilterButtonStatus = selectedFilterButtonStatus.filter({$0 != K.FilterParameters.AGE_18_PLUS})
+            sender.backgroundColor = UIColor.systemGray5
         }else{
             selectedFilterButtonStatus.append(K.FilterParameters.AGE_18_PLUS)
+            sender.backgroundColor = UIColor.red
         }
         filterCenterDetails()
     }
     
-    @IBAction func age45PlusButtonPressed(_ sender: Any) {
-        print("45+")
+    @IBAction func age45PlusButtonPressed(_ sender: UIButton) {
         if selectedFilterButtonStatus.contains(K.FilterParameters.AGE_45_PLUS){
             selectedFilterButtonStatus = selectedFilterButtonStatus.filter({$0 != K.FilterParameters.AGE_45_PLUS})
+            sender.backgroundColor = UIColor.systemGray5
         }else{
             selectedFilterButtonStatus.append(K.FilterParameters.AGE_45_PLUS)
+            sender.backgroundColor = UIColor.red
         }
         filterCenterDetails()
     }
     @IBAction func covishiledButtonPressed(_ sender: UIButton) {
-        print("covishield")
         if selectedFilterButtonStatus.contains(K.FilterParameters.COVISHIELD){
             selectedFilterButtonStatus = selectedFilterButtonStatus.filter({$0 != K.FilterParameters.COVISHIELD})
+            sender.backgroundColor = UIColor.systemGray5
         }else{
             selectedFilterButtonStatus.append(K.FilterParameters.COVISHIELD)
+            sender.backgroundColor = UIColor.red
         }
         filterCenterDetails()
     }
     
     @IBAction func covaxinButtonPressed(_ sender: UIButton) {
-        print("covaxin")
         if selectedFilterButtonStatus.contains(K.FilterParameters.COVAXIN){
             selectedFilterButtonStatus = selectedFilterButtonStatus.filter({$0 != K.FilterParameters.COVAXIN})
+            sender.backgroundColor = UIColor.systemGray5
         }else{
             selectedFilterButtonStatus.append(K.FilterParameters.COVAXIN)
+            sender.backgroundColor = UIColor.red
         }
         filterCenterDetails()
     }
@@ -125,10 +127,26 @@ class VaccinationCenterDetailsViewController: UIViewController {
         if selectedFilterButtonStatus.count == 0{
             centerDetails = centerDetailsBackup
         }else{
+            //print("\(selectedFilterButtonStatus) ->\(selectedFilterButtonStatus.count)")
+            centerDetails = centerDetailsBackup
             for i in 0...selectedFilterButtonStatus.count-1{
                 let selectedButton = selectedFilterButtonStatus[i]
-                centerDetails = centerDetails.filter({$0.feeType == selectedButton})
-                
+                switch selectedButton{
+                case K.FilterParameters.FREE:
+                    centerDetails = centerDetails.filter({$0.feeType == selectedButton})
+                case K.FilterParameters.PAID:
+                    centerDetails = centerDetails.filter({$0.feeType == selectedButton})
+                case K.FilterParameters.AGE_18_PLUS:
+                    centerDetails = centerDetails.filter({$0.minAgeLimit == 18})
+                case K.FilterParameters.AGE_45_PLUS:
+                    centerDetails = centerDetails.filter({$0.minAgeLimit == 45})
+                case K.FilterParameters.COVISHIELD:
+                    centerDetails = centerDetails.filter({$0.vaccine == selectedButton})
+                case K.FilterParameters.COVAXIN:
+                    centerDetails = centerDetails.filter({$0.vaccine == selectedButton})
+                default:
+                    centerDetails = centerDetailsBackup
+                }
             }
         }
         vaccinationCenterDetailsTableView.reloadData()
@@ -171,24 +189,8 @@ extension VaccinationCenterDetailsViewController : UITableViewDelegate , UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         vaccinationCenterDetailsTableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 223
-//    }
-    
+    }    
     
 }
 
-//MARK: - Filter Button Functions
-extension VaccinationCenterDetailsDelegate{
-   
-}
 
-enum filterButton {
-    case none
-    enum free {
-        case isSelected
-        case notSelected
-    }
-}
