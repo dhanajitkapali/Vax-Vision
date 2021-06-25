@@ -30,6 +30,11 @@ class VaccineSlotBookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //add design to UI
+        selectStateMenuButton.layer.cornerRadius = 15.0
+        selectDistrictMenuButton.layer.cornerRadius = 15.0
+        checkSlotsButton.layer.cornerRadius = 15.0
+        
         //setting self delegate of presenter
         presenter = VaccineSlotBookPresenter(withDelegate : self)
 

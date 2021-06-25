@@ -9,9 +9,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet private weak var checkVaccineSlotsButton: UIButton!
+    @IBOutlet private weak var downloadVaccineCertificateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //add design to UI
+        checkVaccineSlotsButton.layer.cornerRadius = 15.0
+        downloadVaccineCertificateButton.layer.cornerRadius = 15.0
+        
     }
 
 
