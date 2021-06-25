@@ -303,10 +303,10 @@
             </objects>
             <point key="canvasLocation" x="2350.7246376811595" y="-241.07142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--VaccineOTP Generate View Controller-->
         <scene sceneID="UvG-lz-UZb">
             <objects>
-                <viewController id="YKG-8e-afz" sceneMemberID="viewController">
+                <viewController id="YKG-8e-afz" customClass="VaccineOTPGenerateViewController" customModule="Vax_Vision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gi4-xl-ZcP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,33 +326,123 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWX-fO-zLl">
-                                <rect key="frame" x="108" y="500.5" width="198" height="52"/>
+                                <rect key="frame" x="10" y="500.5" width="394" height="52"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <state key="normal" title="Generate OTP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="generateOTPButtonPressed:" destination="YKG-8e-afz" eventType="touchUpInside" id="nmY-YM-OMT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OM5-ct-NzW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OM5-ct-NzW" firstAttribute="trailing" secondItem="a7S-F5-dSt" secondAttribute="trailing" constant="15" id="108-3e-9Wv"/>
+                            <constraint firstItem="OM5-ct-NzW" firstAttribute="trailing" secondItem="NWX-fO-zLl" secondAttribute="trailing" constant="10" id="3qP-4n-ESj"/>
+                            <constraint firstItem="NWX-fO-zLl" firstAttribute="leading" secondItem="OM5-ct-NzW" secondAttribute="leading" constant="10" id="4fL-x3-76D"/>
                             <constraint firstItem="a7S-F5-dSt" firstAttribute="leading" secondItem="OM5-ct-NzW" secondAttribute="leading" constant="15" id="8Fc-mZ-qvF"/>
                             <constraint firstItem="o1b-QX-G9d" firstAttribute="centerX" secondItem="Gi4-xl-ZcP" secondAttribute="centerX" id="KiZ-Bp-DrO"/>
                             <constraint firstItem="a7S-F5-dSt" firstAttribute="centerY" secondItem="Gi4-xl-ZcP" secondAttribute="centerY" id="LP6-tL-obp"/>
                             <constraint firstItem="NWX-fO-zLl" firstAttribute="centerX" secondItem="Gi4-xl-ZcP" secondAttribute="centerX" id="dwK-2l-dLP"/>
                             <constraint firstItem="a7S-F5-dSt" firstAttribute="top" secondItem="o1b-QX-G9d" secondAttribute="bottom" constant="40" id="j5o-Eu-4uf"/>
                             <constraint firstItem="NWX-fO-zLl" firstAttribute="top" secondItem="a7S-F5-dSt" secondAttribute="bottom" constant="30" id="mlv-xA-I0q"/>
-                            <constraint firstItem="a7S-F5-dSt" firstAttribute="centerX" secondItem="Gi4-xl-ZcP" secondAttribute="centerX" id="zaz-q7-egD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hGT-jf-L6C"/>
+                    <connections>
+                        <outlet property="generateOTPButton" destination="NWX-fO-zLl" id="lKE-cY-RRL"/>
+                        <outlet property="mobileNoTextField" destination="a7S-F5-dSt" id="Ees-q6-jQp"/>
+                        <segue destination="L5U-Ko-uZT" kind="show" identifier="otpGenerateToVerification" id="BDw-YD-FSJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nn-ER-O0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525" y="421"/>
+        </scene>
+        <!--VaccineOTP Verification View Controller-->
+        <scene sceneID="dtj-cr-nyh">
+            <objects>
+                <viewController id="L5U-Ko-uZT" customClass="VaccineOTPVerificationViewController" customModule="Vax_Vision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DbL-xE-mrd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8P-bW-COS">
+                                <rect key="frame" x="20" y="274.5" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2M-07-0SO">
+                                <rect key="frame" x="20" y="317.5" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="YyP-Ty-jrA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the OTP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbJ-UJ-JTR">
+                                <rect key="frame" x="20" y="425.5" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="p3u-3U-WWI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2C-At-TH9">
+                                <rect key="frame" x="20" y="500.5" width="374" height="52"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="otpSubmitButtonPressed:" destination="L5U-Ko-uZT" eventType="touchUpInside" id="QFx-EU-Ft6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycu-Fb-MCD">
+                                <rect key="frame" x="20" y="382.5" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="12c-Zy-U1t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ycu-Fb-MCD" firstAttribute="top" secondItem="Q2M-07-0SO" secondAttribute="bottom" constant="20" id="9fB-5b-XYo"/>
+                            <constraint firstItem="Q2M-07-0SO" firstAttribute="top" secondItem="h8P-bW-COS" secondAttribute="bottom" constant="10" id="Bfb-Lh-tWp"/>
+                            <constraint firstItem="pbJ-UJ-JTR" firstAttribute="centerY" secondItem="DbL-xE-mrd" secondAttribute="centerY" id="DGE-5p-X7W"/>
+                            <constraint firstItem="O2C-At-TH9" firstAttribute="leading" secondItem="12c-Zy-U1t" secondAttribute="leading" constant="20" id="Eo6-Hf-uFk"/>
+                            <constraint firstItem="12c-Zy-U1t" firstAttribute="trailing" secondItem="pbJ-UJ-JTR" secondAttribute="trailing" constant="20" id="GYG-Mc-J1f"/>
+                            <constraint firstItem="ycu-Fb-MCD" firstAttribute="leading" secondItem="12c-Zy-U1t" secondAttribute="leading" constant="20" id="OFp-V2-nNh"/>
+                            <constraint firstItem="Q2M-07-0SO" firstAttribute="leading" secondItem="12c-Zy-U1t" secondAttribute="leading" constant="20" id="Ulr-fG-8gH"/>
+                            <constraint firstItem="pbJ-UJ-JTR" firstAttribute="leading" secondItem="12c-Zy-U1t" secondAttribute="leading" constant="20" id="dl1-0D-HLA"/>
+                            <constraint firstItem="12c-Zy-U1t" firstAttribute="trailing" secondItem="ycu-Fb-MCD" secondAttribute="trailing" constant="20" id="dm1-yJ-aZk"/>
+                            <constraint firstItem="12c-Zy-U1t" firstAttribute="trailing" secondItem="h8P-bW-COS" secondAttribute="trailing" constant="20" id="iZ9-fa-mfi"/>
+                            <constraint firstItem="O2C-At-TH9" firstAttribute="top" secondItem="pbJ-UJ-JTR" secondAttribute="bottom" constant="30" id="kAe-N8-DhY"/>
+                            <constraint firstItem="pbJ-UJ-JTR" firstAttribute="top" secondItem="ycu-Fb-MCD" secondAttribute="bottom" constant="10" id="m6s-hE-1xX"/>
+                            <constraint firstItem="h8P-bW-COS" firstAttribute="leading" secondItem="12c-Zy-U1t" secondAttribute="leading" constant="20" id="q3f-KD-QQ6"/>
+                            <constraint firstItem="12c-Zy-U1t" firstAttribute="trailing" secondItem="O2C-At-TH9" secondAttribute="trailing" constant="20" id="rRn-ha-SjY"/>
+                            <constraint firstItem="12c-Zy-U1t" firstAttribute="trailing" secondItem="Q2M-07-0SO" secondAttribute="trailing" constant="20" id="sRJ-AT-gEk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ATI-xW-rX6"/>
+                    <connections>
+                        <outlet property="mobileNoTextField" destination="Q2M-07-0SO" id="tUW-kH-G09"/>
+                        <outlet property="otpSubmitButton" destination="O2C-At-TH9" id="PKZ-Ex-6Ki"/>
+                        <outlet property="otpTextField" destination="pbJ-UJ-JTR" id="0Ny-hV-L3q"/>
+                        <segue destination="ABp-Ur-l5W" kind="show" identifier="otpVerificationToCertificateDownload" id="geL-Mc-IW5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cir-8W-o6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351" y="421"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z4c-EW-jF4">
@@ -371,6 +461,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJB-GS-Bwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-217.39130434782609" y="80.357142857142847"/>
+        </scene>
+        <!--Vaccine Certifiate Download View Controller-->
+        <scene sceneID="BOm-Se-Sm7">
+            <objects>
+                <viewController id="ABp-Ur-l5W" customClass="VaccineCertifiateDownloadViewController" customModule="Vax_Vision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yDk-Cv-rR5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referance ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuh-W1-e0l">
+                                <rect key="frame" x="20" y="377.5" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reference ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m89-dB-d8W">
+                                <rect key="frame" x="20" y="425.5" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="T3r-SQ-8BM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTJ-bG-Yrl">
+                                <rect key="frame" x="20" y="490.5" width="374" height="52"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonPressed:" destination="ABp-Ur-l5W" eventType="touchUpInside" id="F2c-rW-ahb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IB6-il-tPi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IB6-il-tPi" firstAttribute="trailing" secondItem="wuh-W1-e0l" secondAttribute="trailing" constant="20" id="6Pd-jg-Iap"/>
+                            <constraint firstItem="wuh-W1-e0l" firstAttribute="leading" secondItem="IB6-il-tPi" secondAttribute="leading" constant="20" id="87h-aO-5bN"/>
+                            <constraint firstItem="IB6-il-tPi" firstAttribute="trailing" secondItem="m89-dB-d8W" secondAttribute="trailing" constant="20" id="FST-8y-Nn1"/>
+                            <constraint firstItem="IB6-il-tPi" firstAttribute="trailing" secondItem="tTJ-bG-Yrl" secondAttribute="trailing" constant="20" id="Jxu-U0-Lca"/>
+                            <constraint firstItem="m89-dB-d8W" firstAttribute="centerY" secondItem="yDk-Cv-rR5" secondAttribute="centerY" id="OQd-eI-5S0"/>
+                            <constraint firstItem="tTJ-bG-Yrl" firstAttribute="leading" secondItem="IB6-il-tPi" secondAttribute="leading" constant="20" id="QnI-Bm-mAq"/>
+                            <constraint firstItem="m89-dB-d8W" firstAttribute="leading" secondItem="IB6-il-tPi" secondAttribute="leading" constant="20" id="isg-hY-G4S"/>
+                            <constraint firstItem="m89-dB-d8W" firstAttribute="top" secondItem="wuh-W1-e0l" secondAttribute="bottom" constant="15" id="lWK-Oh-ZVm"/>
+                            <constraint firstItem="tTJ-bG-Yrl" firstAttribute="top" secondItem="m89-dB-d8W" secondAttribute="bottom" constant="20" id="olr-eh-rjO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aPp-FR-lZA"/>
+                    <connections>
+                        <outlet property="downloadButton" destination="tTJ-bG-Yrl" id="mhb-Mb-gz7"/>
+                        <outlet property="referenceIdTextField" destination="m89-dB-d8W" id="7Na-Sy-Pjm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGv-5R-2XG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3110" y="421"/>
         </scene>
     </scenes>
     <resources>

@@ -18,6 +18,8 @@ struct K {
     
     struct SegueID{
         static let VACCINE_BOOK_TO_DETAILS = "vaccineBookToDetails"
+        static let OTP_GENERATE_TO_VERIFICATION = "otpGenerateToVerification"
+        static let OTP_VERIFICATION_TO_CERTIFICATE_DOWNLOADER = "otpVerificationToCertificateDownload"
     }
     
     struct XibWithName {
