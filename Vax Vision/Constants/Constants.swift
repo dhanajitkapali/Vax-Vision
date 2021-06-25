@@ -41,7 +41,8 @@ struct K {
     
     struct Title {
         struct ButtonTitle {
-            
+            static let FREE = "Free"
+            static let PIAD = "Paid"
         }
         struct TabBarItem {
             
@@ -78,6 +79,15 @@ struct K {
     
     struct Array {
        
+    }
+    
+    struct FilterParameters{
+        static let FREE = "Free"
+        static let PAID = "Paid"
+        static let AGE_18_PLUS = "18"
+        static let AGE_45_PLUS = "45"
+        static let COVISHIELD = "COVISHIELD"
+        static let COVAXIN = "COVAXIN"
     }
     
    
