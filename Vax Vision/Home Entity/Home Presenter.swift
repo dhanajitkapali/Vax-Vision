@@ -21,12 +21,6 @@ class HomePresenter{
     }
     
     public func getPDF() {
-        //to download the PDF
-//        guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdf") else {return}
-//        let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-//        let task = urlSession.downloadTask(with: url)
-//        task.resume()
-        
         //using the func from Networking
         guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdf") else {return}
         NetworkManager().storeAndShare(url: url, fileName: url.lastPathComponent) { (result) in
@@ -55,27 +49,3 @@ class HomePresenter{
     } //:getImage()
 }
 
-//MARK: - Methods for downloading PDF
-extension HomeViewController : URLSessionDownloadDelegate {
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("File Downloaded in location ->", location)
-    
-        
-        guard let url = downloadTask.originalRequest?.url else{ return }
-        let docsPath = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        let destinationPath = docsPath.appendingPathComponent(url.lastPathComponent)
-
-        //remove the file from temp
-        try? FileManager.default.removeItem(at: destinationPath)
-
-        do{
-            try FileManager.default.copyItem(at: location, to: destinationPath)
-            self.pdfUrl = destinationPath
-            print("File Downloaded in location ->", self.pdfUrl ?? "NOT")
-
-        }catch let error {
-            print("Copy Error ->\(error.localizedDescription)")
-        }
-        
-    }
-}
