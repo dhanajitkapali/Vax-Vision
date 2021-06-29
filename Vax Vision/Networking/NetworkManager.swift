@@ -73,6 +73,36 @@ struct NetworkManager{
             
         }.resume()
     }
+    
+    func getFileFrom(url : URL, completionHandler : @escaping(Result<URL,ResponseStatus>)-> Void){
+        URLSession.shared.downloadTask(with: url) { (downloadedFileUrl, response, error) in
+            if let _ = error{
+                print("Error downloading the file")
+                completionHandler(.failure(.error(err: error!.localizedDescription)))
+            }
+            
+            if let url = downloadedFileUrl{
+                completionHandler(.success(url))
+            }
+            
+        }.resume()
+    }
+    
+    func storeAndShare(url : URL, fileName : String, completionHandler : @escaping(Result<URL,ResponseStatus>)-> Void){
+     
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let _ = data , error == nil else{ return }
+            
+            let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
+            do{
+                try data?.write(to: tempURL)
+                completionHandler(.success(tempURL))
+            }catch{
+                completionHandler(.failure(.error(err: error.localizedDescription)))
+            }
+            
+        }.resume()
+    }
 }
 
 enum ResponseStatus : Error{

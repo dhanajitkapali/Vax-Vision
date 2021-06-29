@@ -11,6 +11,10 @@
 		013F94782685EEDE00B6CE05 /* VaccineCertifiateDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F94772685EEDE00B6CE05 /* VaccineCertifiateDownloadViewController.swift */; };
 		013F947B2685EEFD00B6CE05 /* VaccineOTPVerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F947A2685EEFD00B6CE05 /* VaccineOTPVerificationPresenter.swift */; };
 		013F947E2685EF1800B6CE05 /* VaccineCertificateDownloadPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F947D2685EF1800B6CE05 /* VaccineCertificateDownloadPresenter.swift */; };
+		013F948A2689AC1200B6CE05 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 013F94892689AC1100B6CE05 /* testImage.png */; };
+		013F948D2689FE2000B6CE05 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F948C2689FE2000B6CE05 /* PDFViewController.swift */; };
+		013F9493268A0A9E00B6CE05 /* swift_tutorial.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 013F9492268A0A9E00B6CE05 /* swift_tutorial.pdf */; };
+		013F9497268ADE2F00B6CE05 /* Home Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F9496268ADE2F00B6CE05 /* Home Presenter.swift */; };
 		016BA6E4268318E40010613D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6E3268318E40010613D /* AppDelegate.swift */; };
 		016BA6E6268318E40010613D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6E5268318E40010613D /* SceneDelegate.swift */; };
 		016BA6E8268318E40010613D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BA6E7268318E40010613D /* HomeViewController.swift */; };
@@ -37,6 +41,10 @@
 		013F94772685EEDE00B6CE05 /* VaccineCertifiateDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCertifiateDownloadViewController.swift; sourceTree = "<group>"; };
 		013F947A2685EEFD00B6CE05 /* VaccineOTPVerificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineOTPVerificationPresenter.swift; sourceTree = "<group>"; };
 		013F947D2685EF1800B6CE05 /* VaccineCertificateDownloadPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCertificateDownloadPresenter.swift; sourceTree = "<group>"; };
+		013F94892689AC1100B6CE05 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testImage.png; path = ../../../../Downloads/testImage.png; sourceTree = "<group>"; };
+		013F948C2689FE2000B6CE05 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		013F9492268A0A9E00B6CE05 /* swift_tutorial.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = swift_tutorial.pdf; path = ../../../swift_tutorial.pdf; sourceTree = "<group>"; };
+		013F9496268ADE2F00B6CE05 /* Home Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home Presenter.swift"; sourceTree = "<group>"; };
 		016BA6E0268318E40010613D /* Vax Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vax Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		016BA6E3268318E40010613D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		016BA6E5268318E40010613D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		013F9495268ADDD500B6CE05 /* Home Entity */ = {
+			isa = PBXGroup;
+			children = (
+				016BA6E7268318E40010613D /* HomeViewController.swift */,
+				013F9496268ADE2F00B6CE05 /* Home Presenter.swift */,
+			);
+			path = "Home Entity";
+			sourceTree = "<group>";
+		};
 		016BA6D7268318E40010613D = {
 			isa = PBXGroup;
 			children = (
@@ -174,10 +191,14 @@
 				013F94722685EE0C00B6CE05 /* Vaccine Certificate Download */,
 				016BA6F926836DA30010613D /* Vaccine Slot Book */,
 				016BA71D2684459C0010613D /* Vaccination Center Details */,
+				013F9495268ADDD500B6CE05 /* Home Entity */,
 				016BA72326844A3A0010613D /* StoryBoards */,
 				016BA6EC268318EA0010613D /* Assets.xcassets */,
+				013F9492268A0A9E00B6CE05 /* swift_tutorial.pdf */,
+				013F94892689AC1100B6CE05 /* testImage.png */,
 				016BA6EE268318EA0010613D /* LaunchScreen.storyboard */,
 				016BA6F1268318EA0010613D /* Info.plist */,
+				013F948C2689FE2000B6CE05 /* PDFViewController.swift */,
 			);
 			path = "Vax Vision";
 			sourceTree = "<group>";
@@ -254,7 +275,6 @@
 		016BA72426844A600010613D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				016BA6E7268318E40010613D /* HomeViewController.swift */,
 				016BA6E9268318E40010613D /* Main.storyboard */,
 			);
 			path = Main;
@@ -355,6 +375,8 @@
 				016BA6ED268318EA0010613D /* Assets.xcassets in Resources */,
 				016BA6EB268318E40010613D /* Main.storyboard in Resources */,
 				016BA735268459DD0010613D /* VaccinationCenterDetails.xib in Resources */,
+				013F9493268A0A9E00B6CE05 /* swift_tutorial.pdf in Resources */,
+				013F948A2689AC1200B6CE05 /* testImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,10 +402,12 @@
 				016BA71326839A490010613D /* States.swift in Sources */,
 				016BA70A26838AB00010613D /* NetworkManager.swift in Sources */,
 				016BA6E6268318E40010613D /* SceneDelegate.swift in Sources */,
+				013F948D2689FE2000B6CE05 /* PDFViewController.swift in Sources */,
 				016BA72826844FA30010613D /* VaccinationCenterDetailsPresenter.swift in Sources */,
 				013F947B2685EEFD00B6CE05 /* VaccineOTPVerificationPresenter.swift in Sources */,
 				016BA6FB26836DD30010613D /* VaccineSlotBookViewController.swift in Sources */,
 				016BA70226836E3A0010613D /* VaccineOTPGenerateViewController.swift in Sources */,
+				013F9497268ADE2F00B6CE05 /* Home Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

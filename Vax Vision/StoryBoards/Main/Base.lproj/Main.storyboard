@@ -43,7 +43,15 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YKG-8e-afz" kind="show" id="FFG-RE-cvp"/>
+                                    <action selector="downloadVaccineCertificateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fP9-vG-Oeu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJQ-TH-DoF">
+                                <rect key="frame" x="98.5" y="573" width="217" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Download Image"/>
+                                <connections>
+                                    <action selector="downloadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyO-qP-6fa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,11 +61,13 @@
                             <constraint firstItem="Vcd-vp-Z2b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="47q-H4-gsh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ekY-RE-89J" secondAttribute="trailing" constant="10" id="CZW-fB-Lmc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vcd-vp-Z2b" secondAttribute="trailing" constant="10" id="Cw4-oz-vya"/>
+                            <constraint firstItem="tJQ-TH-DoF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H3K-wa-IBY"/>
                             <constraint firstItem="Vcd-vp-Z2b" firstAttribute="top" secondItem="ekY-RE-89J" secondAttribute="bottom" constant="20" id="SxX-nz-cKy"/>
                             <constraint firstItem="ekY-RE-89J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g9S-YL-xcs"/>
                             <constraint firstItem="Vcd-vp-Z2b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="key-1T-JGV"/>
                             <constraint firstItem="ekY-RE-89J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="n24-aa-4nu"/>
                             <constraint firstItem="ekY-RE-89J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qO0-L5-anz"/>
+                            <constraint firstItem="tJQ-TH-DoF" firstAttribute="top" secondItem="Vcd-vp-Z2b" secondAttribute="bottom" constant="30" id="z55-Tm-DR1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="m0f-uT-lN0"/>
@@ -368,17 +378,17 @@
             <objects>
                 <viewController id="L5U-Ko-uZT" customClass="VaccineOTPVerificationViewController" customModule="Vax_Vision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbL-xE-mrd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8P-bW-COS">
-                                <rect key="frame" x="20" y="274.5" width="374" height="33"/>
+                                <rect key="frame" x="20" y="247.5" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2M-07-0SO">
-                                <rect key="frame" x="20" y="317.5" width="374" height="45"/>
+                                <rect key="frame" x="20" y="290.5" width="374" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YyP-Ty-jrA"/>
                                 </constraints>
@@ -386,7 +396,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the OTP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbJ-UJ-JTR">
-                                <rect key="frame" x="20" y="425.5" width="374" height="45"/>
+                                <rect key="frame" x="20" y="398.5" width="374" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="p3u-3U-WWI"/>
                                 </constraints>
@@ -394,7 +404,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2C-At-TH9">
-                                <rect key="frame" x="20" y="500.5" width="374" height="52"/>
+                                <rect key="frame" x="20" y="473.5" width="374" height="52"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
@@ -406,7 +416,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycu-Fb-MCD">
-                                <rect key="frame" x="20" y="382.5" width="374" height="33"/>
+                                <rect key="frame" x="20" y="355.5" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -467,17 +477,17 @@
             <objects>
                 <viewController id="ABp-Ur-l5W" customClass="VaccineCertifiateDownloadViewController" customModule="Vax_Vision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yDk-Cv-rR5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referance ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuh-W1-e0l">
-                                <rect key="frame" x="20" y="377.5" width="374" height="33"/>
+                                <rect key="frame" x="20" y="350.5" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Reference ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m89-dB-d8W">
-                                <rect key="frame" x="20" y="425.5" width="374" height="45"/>
+                                <rect key="frame" x="20" y="398.5" width="374" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="T3r-SQ-8BM"/>
                                 </constraints>
@@ -485,7 +495,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTJ-bG-Yrl">
-                                <rect key="frame" x="20" y="490.5" width="374" height="52"/>
+                                <rect key="frame" x="20" y="463.5" width="374" height="52"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
