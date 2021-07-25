@@ -8,7 +8,7 @@
 import Foundation
 
 struct NetworkManager{
-    func getApiData<T:Codable>(forUrl : URL, resultType:T.Type, completionHandler:@escaping(Result<T, ResponseStatus>)-> Void){
+    func getApiData<T:Codable>(forUrl : URL, resultType:T.Type, completionHandler:@escaping(Result<T, NetworkingError>)-> Void){
         
         URLSession.shared.dataTask(with: forUrl) { (data, response, error) in
             
@@ -21,25 +21,33 @@ struct NetworkManager{
                 completionHandler(.failure(.invalidData))
                 return
             }
-            guard let _ = response else{
+            guard let httpResponse = response as? HTTPURLResponse else {
                 print(K.ErrorMessage.INVALID_RESPONSE)
                 completionHandler(.failure(.invalidResponse))
                 return
             }
-            do{
-                let result = try JSONDecoder().decode(T.self, from: data!)
-                completionHandler(.success(result))
-               // print(result)
-                
-            }catch let err{
-                print("\(K.ErrorMessage.JSON_PARSING_ERROR) ->\(err.localizedDescription)")
-                completionHandler(.failure(.error(err: err.localizedDescription)))
+            
+            //The Request has succeeded, continue decoding the data
+            let status = HttpResponseCodeHanlder().HttpResponseCodeChecker(httpResponse)
+            if status == .OKResponse{
+                do{
+                    let result = try JSONDecoder().decode(T.self, from: data!)
+                    completionHandler(.success(result))
+                    // print(result)
+                    
+                }catch let err{
+                    print("\(K.ErrorMessage.JSON_PARSING_ERROR) ->\(err.localizedDescription)")
+                    completionHandler(.failure(.error(err: err.localizedDescription)))
+                }
+            }else{
+                print(K.ErrorMessage.INVALID_RESPONSE)
+                completionHandler(.failure(.invalidResponse))
             }
         }.resume()
     }
     
     
-    func postApiData<T:Codable>(requestUrl: URL, requestBody: Data, resultType: T.Type, completionHandler:@escaping(Result<T, ResponseStatus>)-> Void){
+    func postApiData<T:Codable>(requestUrl: URL, requestBody: Data, resultType: T.Type, completionHandler:@escaping(Result<T, NetworkingError>)-> Void){
         
         var urlRequest = URLRequest(url: requestUrl)
         urlRequest.httpMethod = K.Networking.HttpMethod.POST_METHOD
@@ -57,55 +65,86 @@ struct NetworkManager{
                 completionHandler(.failure(.invalidData))
                 return
             }
-            guard let _ = response else{
+            guard let httpResponse = response as? HTTPURLResponse else {
                 print(K.ErrorMessage.INVALID_RESPONSE)
+                completionHandler(.failure(.invalidResponse))
                 return
             }
-            do{
-                let result = try JSONDecoder().decode(T.self, from: data!)
-                completionHandler(.success(result))
-               // print(result)
-                
-            }catch let err{
-                print("\(K.ErrorMessage.JSON_PARSING_ERROR) ->\(err.localizedDescription)")
-                completionHandler(.failure(.decodingError(err: err.localizedDescription)))
+            
+            //The Request has succeeded, continue decoding the data
+            let status = HttpResponseCodeHanlder().HttpResponseCodeChecker(httpResponse)
+            if status == .OKResponse{
+                do{
+                    let result = try JSONDecoder().decode(T.self, from: data!)
+                    completionHandler(.success(result))
+                    // print(result)
+                    
+                }catch let err{
+                    print("\(K.ErrorMessage.JSON_PARSING_ERROR) ->\(err.localizedDescription)")
+                    completionHandler(.failure(.decodingError(err: err.localizedDescription)))
+                }
+            }else{
+                print(K.ErrorMessage.INVALID_RESPONSE)
+                completionHandler(.failure(.invalidResponse))
             }
             
         }.resume()
     }
     
-    func getFileFrom(url : URL, completionHandler : @escaping(Result<URL,ResponseStatus>)-> Void){
+    func getFileFrom(url : URL, completionHandler : @escaping(Result<URL,NetworkingError>)-> Void){
         URLSession.shared.downloadTask(with: url) { (downloadedFileUrl, response, error) in
             if let _ = error{
-                print("Error downloading the file")
+                print(K.ErrorMessage.DOWNLOADING_WHILE_ERROR)
                 completionHandler(.failure(.error(err: error!.localizedDescription)))
             }
             
-            if let url = downloadedFileUrl{
-                completionHandler(.success(url))
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print(K.ErrorMessage.INVALID_RESPONSE)
+                completionHandler(.failure(.invalidResponse))
+                return
             }
-            
+            //The Request has succeeded, continue decoding the data
+            let status = HttpResponseCodeHanlder().HttpResponseCodeChecker(httpResponse)
+            if status == .OKResponse{
+                if let url = downloadedFileUrl{
+                    completionHandler(.success(url))
+                }
+            }else{
+                print(K.ErrorMessage.INVALID_RESPONSE)
+                completionHandler(.failure(.invalidResponse))
+            }
         }.resume()
     }
     
-    func storeAndShare(url : URL, fileName : String, completionHandler : @escaping(Result<URL,ResponseStatus>)-> Void){
-     
+    func storeAndShare(url : URL, fileName : String, completionHandler : @escaping(Result<URL,NetworkingError>)-> Void){
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let _ = data , error == nil else{ return }
             
-            let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
-            do{
-                try data?.write(to: tempURL)
-                completionHandler(.success(tempURL))
-            }catch{
-                completionHandler(.failure(.error(err: error.localizedDescription)))
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print(K.ErrorMessage.INVALID_RESPONSE)
+                completionHandler(.failure(.invalidResponse))
+                return
             }
-            
+            //The Request has succeeded, continue decoding the data
+            let status = HttpResponseCodeHanlder().HttpResponseCodeChecker(httpResponse)
+            if status == .OKResponse{
+                let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
+                do{
+                    try data?.write(to: tempURL)
+                    completionHandler(.success(tempURL))
+                }catch{
+                    completionHandler(.failure(.error(err: error.localizedDescription)))
+                }
+            }else{
+                print(K.ErrorMessage.INVALID_RESPONSE)
+                completionHandler(.failure(.invalidResponse))
+            }
         }.resume()
     }
 }
 
-enum ResponseStatus : Error{
+enum NetworkingError : Error{
     case error(err : String)
     case invalidResponse
     case invalidData

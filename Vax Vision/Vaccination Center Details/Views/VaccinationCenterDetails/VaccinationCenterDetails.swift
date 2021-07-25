@@ -32,6 +32,7 @@ class VaccinationCenterDetails: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func mapButtonPressed(_ sender: UIButton) {
         print("mapButtonPressed")
     }
