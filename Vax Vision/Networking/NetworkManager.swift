@@ -23,7 +23,7 @@ struct NetworkManager{
             }
             guard let httpResponse = response as? HTTPURLResponse else {
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.noResponse))
                 return
             }
             
@@ -41,7 +41,7 @@ struct NetworkManager{
                 }
             }else{
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.invalidResponse(type: status)))
             }
         }.resume()
     }
@@ -67,7 +67,7 @@ struct NetworkManager{
             }
             guard let httpResponse = response as? HTTPURLResponse else {
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.noResponse))
                 return
             }
             
@@ -85,7 +85,7 @@ struct NetworkManager{
                 }
             }else{
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.invalidResponse(type: status)))
             }
             
         }.resume()
@@ -100,7 +100,7 @@ struct NetworkManager{
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.noResponse))
                 return
             }
             //The Request has succeeded, continue decoding the data
@@ -111,7 +111,7 @@ struct NetworkManager{
                 }
             }else{
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.invalidResponse(type: status)))
             }
         }.resume()
     }
@@ -123,7 +123,7 @@ struct NetworkManager{
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.noResponse))
                 return
             }
             //The Request has succeeded, continue decoding the data
@@ -138,7 +138,7 @@ struct NetworkManager{
                 }
             }else{
                 print(K.ErrorMessage.INVALID_RESPONSE)
-                completionHandler(.failure(.invalidResponse))
+                completionHandler(.failure(.invalidResponse(type: status)))
             }
         }.resume()
     }
@@ -146,7 +146,8 @@ struct NetworkManager{
 
 enum NetworkingError : Error{
     case error(err : String)
-    case invalidResponse
+    case noResponse
+    case invalidResponse(type : HttpResponseCode)
     case invalidData
     case decodingError(err : String)
 }
